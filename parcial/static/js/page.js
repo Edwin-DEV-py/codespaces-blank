@@ -14,6 +14,7 @@ function Agregar(){
 
     document.querySelector('.contenedorCampos').appendChild(nuevoPar);
 
+    configurarListeners();
 }
 
 function Eliminar(){
