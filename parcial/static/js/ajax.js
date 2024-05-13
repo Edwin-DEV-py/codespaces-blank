@@ -1,3 +1,3 @@
-function hola(){
+function Calcular(){
     console.log("hola")
 }

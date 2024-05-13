@@ -11,10 +11,10 @@
 <body>
     
     <div class="container d-flex justify-content-center align-items-center divNotas">
-        <div class="vh-100">
+        <div class="vh-100 gradient-custom">
             <div class="container py-4 h-75">
-              <div class="row d-flex justify-content-center align-items-center">
-                <div class="col-12">
+              <div class="row d-flex justify-content-center align-items-center h-75">
+                <div class="col-12 col-md-9 col-lg-7 col-xl-6">
                   <div class="card bg-dark text-white" style="border-radius: 1rem;">
                     <div class="card-body p-5 text-center">
           
@@ -23,10 +23,10 @@
                         <h2 class="fw-bold mb-2 text-uppercase">Alcanzo a Aprobar</h2>
                         <p class="text-white-50 mb-2">Ingresa tu notas y porcentajes</p>
           
-                        <form action="" method="post">
-                            {% csrf_token %}
-                            <div class="container">
-                                <div class="row">
+                        <div class="container">
+                            <div class="row">
+                                <form action="" method="post">\
+                                    {% csrf_token %}
                                     <div data-mdb-input-init class="form-outline form-white mb-2 pr-2 row col-4 mr-8 me-2">
                                         <input type="text" id="typeTextUserName" class="form-control form-control-md" />
                                         <label class="form-label" for="typeTextUserName">Nota</label>
@@ -38,9 +38,9 @@
                                     <div data-mdb-input-init class="form-outline form-white mb-4 row col-4 mx-auto">
                                         <button type="button" class="btn btn-danger">Remover</button>
                                     </div>
-                                </div>
+                                </form>
                             </div>
-                        </form>
+                        </div>
     
                         <button type="button" class="btn btn-primary">Agregar nueva nota</button>
                         <button type="button" class="btn btn-success">Calcular</button>
