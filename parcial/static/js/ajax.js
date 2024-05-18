@@ -1,12 +1,11 @@
 
 //evento para escuchar los porcentajes
-var totalSuma = 0;
-
 function configurarListeners() {
     var sumaPorcentajes = document.querySelectorAll('.porcentaje');
 
     sumaPorcentajes.forEach(function(input) {
         input.addEventListener('input', function() {
+            var totalSuma = 0;
 
             sumaPorcentajes.forEach(function(input) {
                 var valor = parseInt(input.value);
@@ -14,6 +13,8 @@ function configurarListeners() {
                     totalSuma += valor;
                 }
             });
+
+            console.log("Suma total:", totalSuma);
 
             if (totalSuma > 100) {
                 alert('La suma de los porcentajes no puede exceder el 100%.');
