@@ -26,8 +26,38 @@ function configurarListeners() {
 
 configurarListeners();
 
+//La nota no puede ser mayor a 50:
+function configurarListeners2() {
+    var sumaPorcentajes = document.querySelectorAll('.nota');
+
+    sumaPorcentajes.forEach(function(input) {
+        input.addEventListener('input', function() {
+            var valor = parseInt(input.value);
+
+            if (valor > 50) {
+                alert('La nota no puede ser mayor a 50');
+                input.value = '';
+            }
+        });
+    });
+}
+
+configurarListeners2();
+
 //evento de calcular
 
 function Calcular(){
-    console.log("hola")
+    var pares = document.querySelectorAll('.parCampos');
+    var notas = 0;
+    pares.forEach(function(par) {
+        var nota = parseFloat(par.querySelector('.nota').value) / 10;
+        var porcentaje = parseFloat(par.querySelector('.porcentaje').value) / 100;
+        var notaTotal = (nota * porcentaje).toFixed(2);
+        notas += parseFloat(notaTotal);
+        console.log("Nota:", nota, "Porcentaje:", porcentaje, "NotaTotal", notaTotal);
+        console.log(notas);
+    });
+
+    var sumaNotas = notas.toFixed(2);
+    alert('La suma de las notas es: ' + sumaNotas);
 }
