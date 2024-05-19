@@ -9,6 +9,11 @@ function configurarListeners() {
 
             sumaPorcentajes.forEach(function(input) {
                 var valor = parseInt(input.value);
+                if (valor < 0) {
+                    alert('La nota no puede ser menor a 0');
+                    input.value = '';
+                    return;
+                }
                 if (!isNaN(valor)) {
                     totalSuma += valor;
                 }
@@ -36,6 +41,10 @@ function configurarListeners2() {
 
             if (valor > 50) {
                 alert('La nota no puede ser mayor a 50');
+                input.value = '';
+            }
+            if(valor < 0) {
+                alert('La nota no puede ser menor a 0');
                 input.value = '';
             }
         });
