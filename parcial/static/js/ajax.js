@@ -49,14 +49,18 @@ configurarListeners2();
 function Calcular(){
     var pares = document.querySelectorAll('.parCampos');
     var notas = 0;
-    pares.forEach(function(par) {
+    for (const par of pares) {
+        if(par.querySelector('.nota').value.length === 0 || par.querySelector('.porcentaje').value.length === 0){
+            alert("Debe llenar todos los campos");
+            return;
+        }
         var nota = parseFloat(par.querySelector('.nota').value) / 10;
         var porcentaje = parseFloat(par.querySelector('.porcentaje').value) / 100;
         var notaTotal = (nota * porcentaje).toFixed(2);
         notas += parseFloat(notaTotal);
         console.log("Nota:", nota, "Porcentaje:", porcentaje, "NotaTotal", notaTotal);
         console.log(notas);
-    });
+    }
 
     var sumaNotas = notas.toFixed(2);
     alert('La suma de las notas es: ' + sumaNotas);
